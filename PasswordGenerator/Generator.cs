@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PasswordGenerator
 {
-    class Generator
+    public class Generator
     {
         private static char[] specChars = {
             '-', '?', '/', '@', '$', '*', '+',

@@ -1,3 +1,7 @@
 .vs
+/packages
 /PasswordGenerator/bin
 /PasswordGenerator/obj
+/TestResults
+/UnitTestPasswordGenerator/bin
+/UnitTestPasswordGenerator/obj
