@@ -17,7 +17,7 @@
             <Setter Property="Foreground" Value="#ffbc00" />
         </Style>
         <Style TargetType="{x:Type CheckBox}">
-            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Foreground" Value="#ffbc00" />
             <Setter Property="SnapsToDevicePixels" Value="true" />
             <Setter Property="OverridesDefaultStyle" Value="true" />
             <Setter Property="Height" Value="30" />
