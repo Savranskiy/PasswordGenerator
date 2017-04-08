@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Name="PasswordGenerator"
         Title="Password Generator"
-        Height="291.353"
-        Width="374.529">
+        Height="274.353"
+        Width="373.529">
     <Window.Resources>
         <Style TargetType="Grid">
             <Setter Property="Background" Value="#3b3b3b" />
@@ -158,30 +158,23 @@
             <TextBlock Name="DurationValue" Text="{Binding ElementName=PasswordGenerator}" FontSize="12" Foreground="Gainsboro" />
         </StackPanel>
     </Window.Resources>
-    <Grid HorizontalAlignment="Left" Width="368">
-        <Grid Margin="10,10,0,0" HorizontalAlignment="Left" Width="348">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="92*"/>
-                <ColumnDefinition Width="153*"/>
-            </Grid.ColumnDefinitions>
-            <Label x:Name="label" Content="Length:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="28"/>
-            <TextBox x:Name="PasswordLength" HorizontalAlignment="Left" Height="35" Margin="0,33,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top" Width="120">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </TextBox.Resources>
-            </TextBox>
-            <CheckBox x:Name="NeedSpecific" Content="Specific chars" IsChecked="False" Checked="NeedSpecific_Checked" Unchecked="NeedSpecific_Unchecked" HorizontalAlignment="Left" Margin="0,73,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="Generate" Content="Generate" HorizontalAlignment="Left" Margin="4,33,0,0" VerticalAlignment="Top" Width="203" Height="35" Click="Generate_Click" Grid.Column="1"/>
-            <TextBox x:Name="Password" Margin="0,108,0,0" TextWrapping="Wrap" Text="" Grid.ColumnSpan="2" Height="123" VerticalAlignment="Top" HorizontalAlignment="Left" Width="338">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </TextBox.Resources>
-            </TextBox>
-        </Grid>
-
+    <Grid HorizontalAlignment="Center" Width="366">
+        <Label x:Name="label" Content="Length:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Margin="10,0,0,0"/>
+        <TextBox x:Name="PasswordLength" HorizontalAlignment="Left" Height="35" Margin="10,33,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top" Width="120">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <CheckBox x:Name="NeedSpecific" Content="Specific chars" IsChecked="False" Checked="NeedSpecific_Checked" Unchecked="NeedSpecific_Unchecked" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Generate" Content="Generate" HorizontalAlignment="Left" Margin="153,33,0,0" VerticalAlignment="Top" Width="203" Height="35" Click="Generate_Click"/>
+        <TextBox x:Name="Password" Margin="10,108,0,0" TextWrapping="Wrap" Text="" Height="123" VerticalAlignment="Top" HorizontalAlignment="Left" Width="346">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
     </Grid>
 </Window>
