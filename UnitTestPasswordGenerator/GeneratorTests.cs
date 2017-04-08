@@ -5,7 +5,7 @@ using PasswordGenerator;
 namespace UnitTestPasswordGenerator
 {
     [TestClass]
-    public class GeneratorTest
+    public class GeneratorTests
     {
         private Generator passwordGenerator = Generator.GetInstance();
 
