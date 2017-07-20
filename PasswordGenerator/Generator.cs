@@ -8,72 +8,41 @@ namespace PasswordGenerator
 {
     public class Generator
     {
-        private static char[] specChars = {
-            '-', '?', '/', '@', '$', '*', '+',
-            '=', '(', ')', '&', '#', ';', ':'
-        };
+        const int LAST_INDEX = 61;
 
-        private static char[] chars = {
-            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
-        };
-
-        public bool IsSpecific { get; set; }
+        private string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-?/@$*+=()&#;:";
+        public bool IsSpecial { get; set; }
+        public bool IsNumber { get; set; }
+        public bool IsChars { get; set; }
         public int Size { get; set; }
 
-        private static Generator instance = null;
-
-        Generator()
+        public Generator()
         {
-            IsSpecific = false;
+            IsSpecial = false;
             Size = 6;
         }
-        
-        public static Generator GetInstance()
-        {
-            if (instance == null)
-                instance = new Generator();
-            return instance;
-        }
 
-        /// <summary>
-        /// Make chars list with special chars if it"s need.
-        /// </summary>
-        /// <returns>
-        /// List of chars
-        /// </returns>
-        private char[] CharList()
-        {
-            if (IsSpecific)
-                return chars.Concat(specChars).ToArray();
-            return chars;
-        }
-
-        /// <summary>
-        /// Generate password.
-        /// </summary>
-        /// <returns>
-        /// Generated password
-        /// </returns>
         public String Generate()
         {
             if (Size < 6)
                 return "Password is too short";
 
+            (int, int) range = MakeRange();
             char[] password = new char[Size];
-            char[] charList = CharList();
 
             Random rnd = new Random();
             for (int i = 0; i < Size; i++)
             {
-                int position = rnd.Next(charList.Length);
-                password[i] = charList[position];
+                password[i] = chars[rnd.Next(range.Item1, range.Item2)];
             }
 
-            return new string(password);
+            return new string(password.OrderBy(x => rnd.Next()).ToArray());
+        }
+
+        private (int, int) MakeRange()
+        {
+            int lastIndex = IsSpecial ? chars.Length - 1 : LAST_INDEX;
+            return (0, lastIndex);
         }
     }
 }

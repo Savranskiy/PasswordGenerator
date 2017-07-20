@@ -14,8 +14,9 @@ namespace PasswordGenerator
 
         public MainWindow()
         {
+            generator = new Generator();
             InitializeComponent();
-            generator = Generator.GetInstance();
+            
         }
 
         private void NeedSpecific_Checked(object sender, RoutedEventArgs e)
@@ -33,7 +34,7 @@ namespace PasswordGenerator
             try
             {
                 generator.Size = Convert.ToInt32(PasswordLength.Text);
-                generator.IsSpecific = NeedSpecificChars;
+                generator.IsSpecial = NeedSpecificChars;
                 Password.Text = generator.Generate();
             }
             catch (FormatException error)
