@@ -5,9 +5,9 @@ using PasswordGenerator;
 namespace UnitTestPasswordGenerator
 {
     [TestClass]
-    public class GeneratorTests
+    public class PasswordGeneratorTest
     {
-        private Generator passwordGenerator = Generator.GetInstance();
+        private Generator passwordGenerator = new Generator();
 
         [TestMethod]
         public void PasswordLength()
