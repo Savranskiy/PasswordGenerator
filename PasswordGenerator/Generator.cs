@@ -8,12 +8,9 @@ namespace PasswordGenerator
 {
     public class Generator
     {
-        const int LAST_INDEX = 61;
-
-        private string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-?/@$*+=()&#;:";
+        private readonly string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        private readonly string extra = "-?/@$*+=()&#;:";
         public bool IsSpecial { get; set; }
-        public bool IsNumber { get; set; }
-        public bool IsChars { get; set; }
         public int Size { get; set; }
 
         public Generator()
@@ -27,22 +24,16 @@ namespace PasswordGenerator
             if (Size < 6)
                 return "Password is too short";
 
-            (int, int) range = MakeRange();
             char[] password = new char[Size];
+            string charList = IsSpecial ? chars + extra : chars;
 
             Random rnd = new Random();
             for (int i = 0; i < Size; i++)
             {
-                password[i] = chars[rnd.Next(range.Item1, range.Item2)];
+                password[i] = charList[rnd.Next(0, charList.Length - 1)];
             }
 
             return new string(password.OrderBy(x => rnd.Next()).ToArray());
-        }
-
-        private (int, int) MakeRange()
-        {
-            int lastIndex = IsSpecial ? chars.Length - 1 : LAST_INDEX;
-            return (0, lastIndex);
         }
     }
 }
