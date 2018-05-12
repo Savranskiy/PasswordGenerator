@@ -14,10 +14,10 @@
             <Setter Property="Background" Value="#3b3b3b" />
         </Style>
         <Style TargetType="{x:Type Label}">
-            <Setter Property="Foreground" Value="#ffbc00" />
+            <Setter Property="Foreground" Value="#76cef5" />
         </Style>
         <Style TargetType="{x:Type CheckBox}">
-            <Setter Property="Foreground" Value="#ffbc00" />
+            <Setter Property="Foreground" Value="#76cef5" />
             <Setter Property="SnapsToDevicePixels" Value="true" />
             <Setter Property="OverridesDefaultStyle" Value="true" />
             <Setter Property="Height" Value="30" />
@@ -126,7 +126,7 @@
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
         <Style TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="#ffbc00" />
+            <Setter Property="Background" Value="#76cef5" />
             <Setter Property="Foreground" Value="#2e2e2e" />
             <Setter Property="FontSize" Value="15" />
             <Setter Property="FontFamily" Value="./#Segoe UI" />
@@ -142,7 +142,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#ffa800" />
+                                <Setter Property="Background" Value="#FF51B3DF" />
                                 <Setter TargetName="PathIcon" Property="Fill" Value="#2e2e2e" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
@@ -159,16 +159,16 @@
         </StackPanel>
     </Window.Resources>
     <Grid HorizontalAlignment="Center" Width="366">
-        <Label x:Name="label" Content="Length:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Margin="10,0,0,0" Foreground="#FF76CEF5"/>
-        <TextBox x:Name="PasswordLength" HorizontalAlignment="Left" Height="35" Margin="10,33,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top" Width="120">
+        <Label x:Name="label" Content="Length:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Margin="10,0,0,0"/>
+        <TextBox x:Name="PasswordLength" HorizontalAlignment="Left" Height="35" Margin="10,33,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top" Width="115">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <CheckBox x:Name="NeedSpecific" Content="Specific chars" IsChecked="False" Checked="NeedSpecific_Checked" Unchecked="NeedSpecific_Unchecked" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" Foreground="#FF76CEF5"/>
-        <Button x:Name="Generate" Content="Generate" HorizontalAlignment="Left" Margin="153,33,0,0" VerticalAlignment="Top" Width="203" Height="35" Click="Generate_Click" Background="#FF76CEF5"/>
+        <CheckBox x:Name="NeedSpecific" Content="Extra chars" IsChecked="False" Checked="NeedSpecific_Checked" Unchecked="NeedSpecific_Unchecked" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Generate" Content="Generate" HorizontalAlignment="Left" Margin="146,33,0,0" VerticalAlignment="Top" Width="210" Height="35" Click="Generate_Click"/>
         <TextBox x:Name="Password" Margin="10,108,0,0" TextWrapping="Wrap" Text="" Height="123" VerticalAlignment="Top" HorizontalAlignment="Left" Width="346">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
