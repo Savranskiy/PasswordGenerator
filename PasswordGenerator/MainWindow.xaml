@@ -68,9 +68,9 @@
                                           Grid.Row="1" Grid.RowSpan="5"
                                           Opacity="0"
                                           Data="M9.07743946676476E-09,4.31805768640244L4.68740335877841,8.86361158398516C4.68740335877841,8.86361158398516,16.3281249985376,-2.42451336648723,16.3281249985376,-2.42451336648723L14.0622100581796,-4.77304938341948 4.68740335877846,4.31805791992662 2.22656251699567,1.93164208562579z"
-                                          Fill="#ffbc00"
+                                          Fill="#76cef5"
                                           Stretch="Fill"
-                                          Stroke="#ffbc00" />
+                                          Stroke="#FF5BB6DF" />
                                     <Path Name="InderminateMark"
                                           Grid.Column="3"
                                           Grid.Row="4"
@@ -146,7 +146,7 @@
                                 <Setter TargetName="PathIcon" Property="Fill" Value="#2e2e2e" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="#ffba00" />
+                                <Setter Property="Background" Value="#FF4297BD" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
